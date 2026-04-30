@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Trevelonline - Pesan Tiket Travel Antar Kota</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+  <div class="container header-container">
+    <div class="logo">
+      <i class="fa-solid fa-bus"></i>
+      <span>TravelOnline</span>
+    </div>
+    
+    <nav class="nav-menu">
+      <a href="#" class="nav-link active">Beranda</a>
+      <a href="#jadwal" class="nav-link">Jadwal</a>
+      <a href="#rute" class="nav-link">Rute & Harga</a>
+      <a href="#tentang" class="nav-link">Tentang</a>
+    </nav>
+    
+    <a href="https://wa.me/6281220120067" class="btn btn-wa" target="_blank">
+      <i class="fa-brands fa-whatsapp"></i>
+      <span>0812-2012-0067</span>
+    </a>
+  </div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="container hero-content">
+    <div class="badge">
+      <i class="fa-solid fa-ticket"></i>
+      <span>Pesan Mudah, Langsung Konfirmasi</span>
+    </div>
+    <h1 class="hero-title">Travel Antar Kota Nyaman & Terpercaya</h1>
+    <p class="hero-subtitle">Layanan travel reguler dengan armada terbaik, sopir profesional, dan harga terjangkau</p>
+  </div>
+</section>
+
+<!-- Booking Widget -->
+<div class="booking-section">
+  <div class="container">
+    <div class="booking-widget">
+      <div class="widget-header">
+        <i class="fa-solid fa-bus"></i>
+        <h2>Pesan Tiket Travel</h2>
+        <p>Isi data perjalanan Anda</p>
+      </div>
+      
+      <div class="booking-form">
+        <div class="form-row">
+          <div class="form-group full-width">
+            <label class="form-label">
+              <i class="fa-solid fa-user"></i>
+              Nama Penumpang
+            </label>
+            <div class="input-box">
+              <i class="fa-solid fa-user"></i>
+              <input type="text" id="passengerName" placeholder="Masukkan nama lengkap" required />
+            </div>
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Kota Asal</label>
+            <div class="input-box">
+              <i class="fa-solid fa-location-dot"></i>
+              <select id="route-from">
+                <option value="">Pilih Kota Asal</option>
+                <option>Pasir Pengaraian</option>
+                <option>Pekanbaru</option>
+                <option>Padang</option>
+                <option>Medan</option>
+                <option>Dumai</option>
+                <option>Bengkalis</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Kota Tujuan</label>
+            <div class="input-box">
+              <i class="fa-solid fa-location-crosshairs"></i>
+              <select id="route-to">
+                <option value="">Pilih Kota Tujuan</option>
+                <option>Pekanbaru</option>
+                <option>Padang</option>
+                <option>Medan</option>
+                <option>Pasir Pengaraian</option>
+                <option>Dumai</option>
+                <option>Bengkalis</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Tanggal Keberangkatan</label>
+            <div class="input-box">
+              <i class="fa-regular fa-calendar"></i>
+              <input type="date" id="date" required />
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Jumlah Penumpang</label>
+            <div class="input-box">
+              <i class="fa-solid fa-users"></i>
+              <select id="passengers">
+                <option>1 Penumpang</option>
+                <option>2 Penumpang</option>
+                <option>3 Penumpang</option>
+                <option>4 Penumpang</option>
+                <option>5 Penumpang</option>
+                <option>6 Penumpang</option>
+                <option>7 Penumpang</option>
+                <option>8+ Penumpang</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        
+        <button class="btn-search" onclick="submitBooking()">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          Pesan Tiket Sekarang
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Keunggulan -->
+<section class="features-section">
+  <div class="container">
+    <h2 class="section-title">Mengapa Memilih Kami?</h2>
+    <div class="features-grid">
+      <div class="feature-item">
+        <div class="feature-icon">
+          <i class="fa-solid fa-shield-halved"></i>
+        </div>
+        <h3>Armada Terawat</h3>
+        <p>Unit travel dengan fasilitas AC, kursi empuk, dan ruang kaki luas</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">
+          <i class="fa-solid fa-user-tie"></i>
+        </div>
+        <h3>Sopir Berpengalaman</h3>
+        <p>Pengemudi profesional yang mengutamakan keselamatan</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">
+          <i class="fa-solid fa-clock"></i>
+        </div>
+        <h3>Tepat Waktu</h3>
+        <p>Jadwal keberangkatan yang disiplin dan tepat waktu</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">
+          <i class="fa-solid fa-headset"></i>
+        </div>
+        <h3>Layanan 24 Jam</h3>
+        <p>Customer service siap membantu kapan saja</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Jadwal -->
+<section class="schedule-section" id="jadwal">
+  <div class="container">
+    <h2 class="section-title">Jadwal Keberangkatan</h2>
+    <div class="schedule-box">
+      <div class="schedule-header">
+        <i class="fa-regular fa-clock"></i>
+        <span>Setiap Hari Tanpa Libur</span>
+      </div>
+      <div class="schedule-times">
+        <div class="time-slot">
+          <i class="fa-solid fa-sun"></i>
+          <div>
+            <strong>07.00 WIB</strong>
+            <small>Pagi</small>
+          </div>
+        </div>
+        <div class="time-slot">
+          <i class="fa-solid fa-sun"></i>
+          <div>
+            <strong>09.00 WIB</strong>
+            <small>Pagi</small>
+          </div>
+        </div>
+        <div class="time-slot">
+          <i class="fa-solid fa-cloud-sun"></i>
+          <div>
+            <strong>12.00 WIB</strong>
+            <small>Siang</small>
+          </div>
+        </div>
+        <div class="time-slot">
+          <i class="fa-solid fa-cloud-sun"></i>
+          <div>
+            <strong>15.00 WIB</strong>
+            <small>Sore</small>
+          </div>
+        </div>
+        <div class="time-slot">
+          <i class="fa-solid fa-moon"></i>
+          <div>
+            <strong>17.00 WIB</strong>
+            <small>Sore</small>
+          </div>
+        </div>
+      </div>
+      <div class="schedule-note">
+        <i class="fa-solid fa-circle-info"></i>
+        <span>Penjemputan dimulai 30 menit sebelum keberangkatan</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Rute & Harga -->
+<section class="routes-section" id="rute">
+  <div class="container">
+    <h2 class="section-title">Rute & Harga Tiket</h2>
+    <div class="routes-grid">
+      <div class="route-card">
+        <div class="route-icon">
+          <i class="fa-solid fa-bus"></i>
+        </div>
+        <div class="route-info">
+          <h4>Pasir Pengaraian → Pekanbaru</h4>
+          <p><i class="fa-regular fa-clock"></i> 4-5 jam perjalanan</p>
+          <p class="price">Rp 150.000 / orang</p>
+        </div>
+        <button class="btn-route" onclick="selectRoute('Pasir Pengaraian', 'Pekanbaru')">
+          Pilih
+        </button>
+      </div>
+      
+      <div class="route-card">
+        <div class="route-icon">
+          <i class="fa-solid fa-bus"></i>
+        </div>
+        <div class="route-info">
+          <h4>Pekanbaru → Padang</h4>
+          <p><i class="fa-regular fa-clock"></i> 6-7 jam perjalanan</p>
+          <p class="price">Rp 200.000 / orang</p>
+        </div>
+        <button class="btn-route" onclick="selectRoute('Pekanbaru', 'Padang')">
+          Pilih
+        </button>
+      </div>
+      
+      <div class="route-card">
+        <div class="route-icon">
+          <i class="fa-solid fa-bus"></i>
+        </div>
+        <div class="route-info">
+          <h4>Pasir Pengaraian → Medan</h4>
+          <p><i class="fa-regular fa-clock"></i> 8-9 jam perjalanan</p>
+          <p class="price">Rp 250.000 / orang</p>
+        </div>
+        <button class="btn-route" onclick="selectRoute('Pasir Pengaraian', 'Medan')">
+          Pilih
+        </button>
+      </div>
+      
+      <div class="route-card">
+        <div class="route-icon">
+          <i class="fa-solid fa-bus"></i>
+        </div>
+        <div class="route-info">
+          <h4>Pekanbaru → Pasir Pengaraian</h4>
+          <p><i class="fa-regular fa-clock"></i> 4-5 jam perjalanan</p>
+          <p class="price">Rp 150.000 / orang</p>
+        </div>
+        <button class="btn-route" onclick="selectRoute('Pekanbaru', 'Pasir Pengaraian')">
+          Pilih
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Tentang -->
+<section class="about-section" id="tentang">
+  <div class="container">
+    <div class="about-box">
+      <h2>Tentang TravelOnline</h2>
+      <p>Kami adalah layanan travel antar kota yang menyediakan transportasi nyaman dan aman untuk perjalanan Anda. Dengan armada yang terawat dan sopir yang berpengalaman, kami berkomitmen memberikan pelayanan terbaik.</p>
+      <div class="about-features">
+        <div class="about-feature">
+          <i class="fa-solid fa-check"></i>
+          <span>Armada Hiace & Innova</span>
+        </div>
+        <div class="about-feature">
+          <i class="fa-solid fa-check"></i>
+          <span>Antar Jemput Alamat</span>
+        </div>
+        <div class="about-feature">
+          <i class="fa-solid fa-check"></i>
+          <span>Harga Terjangkau</span>
+        </div>
+        <div class="about-feature">
+          <i class="fa-solid fa-check"></i>
+          <span>Berangkat Tepat Waktu</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-box">
+      <h2>Siap Berangkat?</h2>
+      <p>Pesan tiket travel Anda sekarang juga</p>
+      <button class="btn btn-large" onclick="scrollToBooking()">
+        <i class="fa-solid fa-ticket"></i> Pesan Sekarang
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-left">
+        <div class="logo">
+          <i class="fa-solid fa-bus"></i>
+          <span>TravelOnline</span>
+        </div>
+        <p>Layanan travel antar kota terpercaya dengan pelayanan terbaik untuk kenyamanan perjalanan Anda.</p>
+      </div>
+      <div class="footer-right">
+        <h3>Hubungi Kami</h3>
+        <ul>
+          <li><i class="fa-solid fa-phone"></i> 0812-2012-0067</li>
+          <li><i class="fa-solid fa-envelope"></i> info@travelonline.com</li>
+          <li><i class="fa-solid fa-location-dot"></i> Pasir Pengaraian, Riau</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 TravelOnline. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Toast -->
+<div id="toast"></div>
+
+<script src="script.js" defer></script>
+</body>
+</html>
